@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Riddle 5 - Alzee</title>
+  <style>
+    body {
+      background-color: #4b0082; /* Indigo */
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+      margin: 0;
+    }
+    .container {
+      max-width: 600px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 0 20px #aa00ff;
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 15px;
+    }
+    p {
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+      line-height: 1.4;
+    }
+    input[type="text"] {
+      font-size: 1.1rem;
+      padding: 10px;
+      width: 60%;
+      border-radius: 6px;
+      border: none;
+      margin-bottom: 20px;
+      outline: none;
+    }
+    button {
+      background-color: #aa00ff;
+      border: none;
+      color: #fff;
+      font-size: 1.1rem;
+      padding: 12px 30px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #8000cc;
+    }
+    .message {
+      margin-top: 20px;
+      font-weight: bold;
+      min-height: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Riddle 5</h1>
+    <p>
+      YOUR FAV PERSON IN THE WORLD  
+    </p>
+    <input type="text" id="answer" placeholder="Enter the secret code" autofocus />
+    <br />
+    <button onclick="checkAnswer()">Submit</button>
+    <div class="message" id="message"></div>
+  </div>
+
+  <script>
+    const correctCode = "Z9245";
+    function checkAnswer() {
+      const userInput = document.getElementById("answer").value.trim().toUpperCase();
+      const message = document.getElementById("message");
+
+      if (userInput === correctCode) {
+        message.style.color = "#aa00ff";
+        message.textContent = "Correct! Moving to the next riddle...";
+        setTimeout(() => {
+          window.location.href = "riddle6.html"; // Next riddle page
+        }, 1500);
+      } else {
+        message.style.color = "#ff6666";
+        message.textContent = "Oops! That’s not correct. Try again.";
+      }
+    }
+  </script>
+</body>
+</html>
