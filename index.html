@@ -1,0 +1,77 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Start Your Hunt</title>
+  <link rel="stylesheet" href="style.css">
+  <audio autoplay loop>
+    <source src="https://example.com/cyberpunk-theme.mp3" type="audio/mpeg">
+  </audio>
+</head>
+<body>
+  <div class="center">
+    <h1>START YOUR HUNT MR. ANAND</h1>
+    <p>BUT REMEMBER THE CLOCK IS TICKING</p>
+    <a href="riddle1.html" class="btn">Begin</a>
+  </div>
+</body>
+</html>
+
+<!-- style.css -->
+body {
+  background-color: black;
+  color: #00ffcc;
+  font-family: 'Courier New', Courier, monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  text-align: center;
+}
+.center {
+  max-width: 600px;
+}
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #00ffcc;
+  color: black;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+<!-- script.js -->
+let countdown = 3600; // 60 mins
+let timerDisplay = document.getElementById("timer");
+function updateTimer() {
+  let minutes = Math.floor(countdown / 60);
+  let seconds = countdown % 60;
+  timerDisplay.innerText = `${minutes}m ${seconds}s`;
+  countdown--;
+  if (countdown < 0) {
+    alert("Time's up! Restarting this puzzle.");
+    location.reload();
+  }
+}
+setInterval(updateTimer, 1000);
+
+<!-- final.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>You Did It</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="center">
+    <h1>YOU DID IT!!</h1>
+    <p>Happy 22nd Birthday 🎉</p>
+  </div>
+</body>
+</html>
