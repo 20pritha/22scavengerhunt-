@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Start Hunt</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="start-container">
+    <h1>START YOUR HUNT MR. ANAND</h1>
+    <h2>BUT REMEMBER THE CLOCK IS TICKING</h2>
+    <button onclick="startHunt()">Begin</button>
+  </div>
+  <audio autoplay loop>
+    <source src="cyberpunk-theme.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script>
+    function startHunt() {
+      window.location.href = 'riddle1.html';
+    }
+  </script>
+</body>
+</html>
+
+<!-- Additional Files (to be created separately):
+- style.css
+- cyberpunk-theme.mp3
+- riddle1.html to riddle22.html (each with 60-min timer script)
+- final.html with message: YOU DID IT BDAY BOY I LOVE YOU SO VERY MUCH
+- JS timer script included per page or linked externally
+-->
