@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Riddle 1</title>
+  <style>
+    body {
+      background: #0f0f0f;
+      color: #e0e0e0;
+      font-family: 'Courier New', Courier, monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 1.5rem;
+      color: #00ffea;
+    }
+    .riddle {
+      margin: 20px 0;
+      font-size: 1.2rem;
+    }
+    input {
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: none;
+      margin: 10px 0;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #00ffea;
+      border: none;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .timer {
+      font-size: 1.1rem;
+      margin-top: 20px;
+      color: #ff007a;
+    }
+  </style>
+</head>
+<body>
+  <h1>RIDDLE 1</h1>
+  <div class="riddle">
+    Wings of dreams and eyes on the sky,<br>
+    He’s aiming high, he wants to fly.<br>
+    With duty and honor in his heart,<br>
+    Find him before he takes off to start!
+  </div>
+
+  <input type="text" id="answer" placeholder="Enter 5-digit code" />
+  <br />
+  <button onclick="checkAnswer()">Submit</button>
+
+  <div class="timer" id="timer">Time Left: 60:00</div>
+
+  <script>
+    let totalSeconds = 3600;
+
+    function updateTimer() {
+      let minutes = Math.floor(totalSeconds / 60);
+      let seconds = totalSeconds % 60;
+      document.getElementById("timer").innerText = `Time Left: ${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+      if (totalSeconds <= 0) {
+        alert("Time's up! Restarting this riddle.");
+        location.reload();
+      } else {
+        totalSeconds--;
+        setTimeout(updateTimer, 1000);
+      }
+    }
+
+    function checkAnswer() {
+      const input = document.getElementById("answer").value.trim().toUpperCase();
+      if (input === "A7392") {
+        window.location.href = "riddle2.html";
+      } else {
+        alert("Wrong code! Try again.");
+      }
+    }
+
+    updateTimer();
+  </script>
+</body>
+</html>
